@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoDi</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <img src="Group%201.png">
+</header>
+<div class="container">
+    <div id="start-screen">
+        <!-- 시작 화면 내용 -->
+        <h1>나의 도토리는 뭐디?</h1>
+        <p>Do-Tori와 함께 살펴보는</p>
+        <p>MBTI Test !!</p>
+        <button id="start-btn">테스트 시작하기</button>
+    </div>
+
+    <div id="question-screen" style="display: none;">
+        <!-- 진행 화면 내용 -->
+        <h2 id="question"></h2>
+        <div id="choices"></div>
+        <button id="next-btn">다음</button>
+    </div>
+
+    <div id="result-screen" style="display: none;">
+        <!-- 결과 화면 내용 -->
+        <h2>Your MBTI Type:</h2>
+        <p id="mbti-result"></p>
+        <p id="mbti-description"></p>
+        <button id="restart-btn">다시하기</button>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

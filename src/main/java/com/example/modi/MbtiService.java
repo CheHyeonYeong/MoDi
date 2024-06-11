@@ -15,22 +15,22 @@ public class MbtiService {
     private final MbtiRepository mbtiRepository;
 
     public String calResult(MbtiDTO mbtiDto) {
-        if (mbtiDto.getE() > mbtiDto.getI()) {
+        if (mbtiDto.getE() >= mbtiDto.getI()) {
             mbtiDto.setMbti1("E");
         } else {
             mbtiDto.setMbti1("I");
         }
-        if (mbtiDto.getN() > mbtiDto.getS()) {
+        if (mbtiDto.getN() >= mbtiDto.getS()) {
             mbtiDto.setMbti2("N");
         } else {
             mbtiDto.setMbti2("S");
         }
-        if (mbtiDto.getT() > mbtiDto.getF()) {
+        if (mbtiDto.getT() >= mbtiDto.getF()) {
             mbtiDto.setMbti3("T");
         } else {
             mbtiDto.setMbti3("F");
         }
-        if (mbtiDto.getP() > mbtiDto.getJ()) {
+        if (mbtiDto.getP() >= mbtiDto.getJ()) {
             mbtiDto.setMbti4("P");
         } else {
             mbtiDto.setMbti4("J");
