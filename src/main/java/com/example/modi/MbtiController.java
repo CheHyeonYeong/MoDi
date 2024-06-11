@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @Log4j2
@@ -20,8 +21,8 @@ public class MbtiController {
     private final MbtiService mbtiService;
 
     @PostMapping(value = "/result")
-    public Map<String, String> calmbti(@RequestBody MbtiDTO mbtiDto){
-        Map<String, String> resultMap = new HashMap<>();
+    public Map<String, Object> calmbti(@RequestBody MbtiDTO mbtiDto){
+        Map<String, Object> resultMap = new HashMap<>();
         // dto로 받아온 데이터로 service한테 mbti를 계산하게 하고, 결과 값을 받아옴.
         String result = mbtiService.calResult(mbtiDto);
 
@@ -31,8 +32,15 @@ public class MbtiController {
         // Service한테 넘겨서 Repository한테 Entity를 DB안에 저장하게 함.
         mbtiService.save(mbtiResult);
 
-        log.info(result + " 안녕 클레오 파트라");
+        // 전체 결과 수와 특정 MBTI 결과 수를 조회
+        long totalCount = mbtiService.getTotalCount();
+        long countByResult = mbtiService.getCountByResult(result);
+
+        // 백분율 계산 (특정 MBTI 결과 수 / 전체 결과 수 * 100)
+        double percentage = (double)countByResult / totalCount * 100;
+
         resultMap.put("result", result);
+        resultMap.put("percentage", percentage);
         return resultMap;
     }
 }

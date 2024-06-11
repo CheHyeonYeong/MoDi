@@ -45,4 +45,15 @@ public class MbtiService {
 
         MbtiResult saved = mbtiRepository.save(mbtiResult);
     }
+
+    // 데이터베이스에 저장된 전체 결과 수를 조회
+    public long getTotalCount() {
+        return mbtiRepository.count();
+    }
+
+    // 특정 MBTI 결과의 개수를 조회
+    public long getCountByResult(String result){
+        return mbtiRepository.countByResult(result);
+    }
+
 }

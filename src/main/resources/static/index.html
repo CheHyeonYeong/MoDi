@@ -9,29 +9,53 @@
 <body>
 <header>
     <img src="Group%201.png">
+    <div id="progress-bar"></div>
 </header>
 <div class="container">
     <div id="start-screen">
         <!-- 시작 화면 내용 -->
         <h1>나의 도토리는 뭐디?</h1>
-        <p>Do-Tori와 함께 살펴보는</p>
-        <p>MBTI Test !!</p>
+        <p>Do-Tori와 함께 살펴보는<br>MBTI Test !!</p>
         <button id="start-btn">테스트 시작하기</button>
+
+        <img src="logo.png" class="start-logo">
     </div>
 
     <div id="question-screen" style="display: none;">
         <!-- 진행 화면 내용 -->
+        <img src="cat.jpg">
         <h2 id="question"></h2>
         <div id="choices"></div>
-        <button id="next-btn">다음</button>
     </div>
 
     <div id="result-screen" style="display: none;">
         <!-- 결과 화면 내용 -->
-        <h2>Your MBTI Type:</h2>
-        <p id="mbti-result"></p>
-        <p id="mbti-description"></p>
-        <button id="restart-btn">다시하기</button>
+        <h1 id="mbti-title"></h1>
+        <img id="mbti-image">
+        <p id="mbti-info"></p>
+        <ul id="mbti-description"></ul>
+        <div class="mbti-equal">
+            <p>나와 같은 도토리는 ?</p>
+            <span id="mbti-percentage"></span>
+        </div>
+
+        <div class="mbti-compatibility">
+            <div class="good-compatibility">
+                <h1>찰떡궁합</h1>
+                <img id="good-compatibility-image">
+                <p></p>
+            </div>
+
+            <div class="bad-compatibility">
+                <h1>환장궁합</h1>
+                <img id="bad-compatibility-image">
+                <p></p>
+            </div>
+        </div>
+
+        <button id="restart-btn">테스트 다시하기</button>
+
+        <img src="logo.png" class="result-logo">
     </div>
 </div>
 

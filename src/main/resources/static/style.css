@@ -1,9 +1,17 @@
 @charset "utf-8";
 
+/*@font-face {*/
+/*    font-family: "Dovemayo_gothic";*/
+/*    src: url("/static/Dovemayo_gothic.ttf") format("truetype");*/
+/*    font-weight: bold;*/
+/*}*/
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #333;
+    /*font-family: 'Dovemayo_gothic', serif;*/
 }
 a{
     display: block;
@@ -15,23 +23,28 @@ img,svg,video,iframe{
     height: 100%;
     object-fit: cover;
 }
-html{
-    scroll-behavior: smooth;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-body{
+
+body {
     font-size: 100%;
     text-align: center;
+    width: 100%;
     margin: 0 auto;
-
-    width: 500px;
-    height: 950px;
+    background-color: white;
 }
 
 .container {
-    width: 500px;
-    height: 100vh;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    padding: 0 3.125rem;
+    box-sizing: border-box;
+    margin: 0 auto;
     background-color: #F5F0EA;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,21 +52,22 @@ body{
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
 }
 
 
 header {
-    width: 500px;
-    height: 50px;
+    width: 100%;
+    max-width: 500px;
+    height: 54px;
     position: fixed;
     background-color: #CCBFB2;
-
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
+    z-index: 999;
 }
 
 header img {
@@ -62,3 +76,238 @@ header img {
     object-fit: cover;
 }
 
+#progress-bar {
+    width: 0;
+    height: 10px;
+    background-color: #9B7268;
+    transition: width 0.3s ease;
+}
+
+#start-screen h1 {
+    font-size: 1.625rem;
+    font-weight: bold;
+}
+#start-screen p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 4rem auto 6rem;
+}
+#start-screen #start-btn,
+#result-screen #restart-btn {
+    background-color: #CCBFB2;
+    border: none;
+    border-radius: 50px;
+
+    padding: 1.25rem 6.25rem;
+
+    font-size: 1.25rem;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+    width: 100%;
+}
+#start-screen #start-btn:hover,
+#result-screen #restart-btn:hover {
+    background-color: #9B7268;
+    color: #fff;
+}
+
+.start-logo {
+    width: inherit;
+    margin-top: 3.75rem;
+}
+
+#question-screen img {
+    width: 250px;
+    height: 200px;
+}
+#question-screen #question {
+    font-size: 1.375rem;
+    margin-top: 7.5rem;
+    margin-bottom: 6.25rem;
+}
+#question-screen #choices button {
+    background-color: #CCBFB2;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2;
+
+    width: 100%;
+    padding: 1rem 3.125rem;
+    border: none;
+    border-radius: 10px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+#question-screen #choices button:first-of-type {
+    margin-bottom: 2rem;
+}
+#question-screen #choices button:hover {
+    background-color: #9B7268;
+    color: #fff;
+}
+
+#result-screen #mbti-title {
+    font-size: 1.375rem;
+    margin: 5rem auto 3rem;
+}
+
+#result-screen #mbti-image {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 2.5rem;
+}
+
+#result-screen #mbti-info {
+    font-size: 1rem;
+    margin-bottom: 2.125rem;
+}
+#result-screen #mbti-description {
+    background-color: #CCBFB2;
+    border-radius: 10px;
+    padding: 2.375rem 0.75rem 3rem;
+    line-height: 1.5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    list-style-type: none;
+
+    margin-bottom: 2.5rem;
+}
+#result-screen #mbti-description li {
+    width: 100%;
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    padding-left: 0.5rem;
+    text-align: left;
+
+    position: relative;
+}
+#result-screen #mbti-description li::before {
+    content: ""; /* 불릿 대체 요소 */
+    position: absolute; /* 절대 위치 설정 */
+    left: 0; /* 왼쪽 여백만큼 이동 */
+    top: 0.5rem; /* 수직 가운데 정렬 */
+    width: 5px; /* 불릿 너비 */
+    height: 5px; /* 불릿 높이 */
+    border-radius: 50%;
+    background-color: #333; /* 불릿 색상 */
+}
+#result-screen .mbti-equal {
+    width: 100%;
+    border: 1px solid #CCBFB2;
+    border-radius: 10px;
+    padding-top: 1.375rem ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+}
+#result-screen .mbti-equal p{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1.75rem;
+}
+#result-screen .mbti-equal #mbti-percentage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #725852;
+
+    margin-bottom: 2.25rem;
+}
+
+#result-screen .mbti-compatibility {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+}
+#result-screen .mbti-compatibility .good-compatibility,
+#result-screen .mbti-compatibility .bad-compatibility {
+    width: 47.5%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    border: 1px solid #CCBFB2;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#result-screen .mbti-compatibility .good-compatibility h1,
+#result-screen .mbti-compatibility .bad-compatibility h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1.75rem;
+}
+#result-screen .mbti-compatibility img {
+    width: 150px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+}
+
+.result-logo {
+    width: inherit;
+    margin-top: 4.25rem;
+    margin-bottom: 4.875rem;
+}
+
+
+@media screen and (max-width: 500px) {
+    body {
+        background-color: #F5F0EA;
+    }
+
+    .container {
+        padding: 0 2rem;
+    }
+
+    #start-screen #start-btn,
+    #result-screen #restart-btn {
+        padding: 20px 80px;
+        font-size: 0.875rem;
+    }
+
+    #question-screen #choices button {
+        font-size: 0.875rem;
+    }
+
+    #question-screen img {
+        width: 200px;
+        height: 150px;
+    }
+
+    #question-screen #question {
+        font-size: 1.25rem;
+        margin-top: 3.75rem;
+        margin-bottom: 3.75rem;
+    }
+
+    #result-screen #mbti-image {
+        width: 200px;
+        height: 150px;
+    }
+
+    #result-screen .mbti-compatibility img {
+        width: 110px;
+        height: 80px;
+    }
+
+    #result-screen .mbti-compatibility .good-compatibility p,
+    #result-screen .mbti-compatibility .bad-compatibility p {
+        font-size: 0.875rem;
+    }
+
+}
