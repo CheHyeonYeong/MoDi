@@ -213,37 +213,37 @@ function displayMbtiResult(mbtiType, percentage) {
 function getMbtiImagePath(mbtiType) {
     switch (mbtiType) {
         case 'INTJ':
-            return 'cat.jpg';
+            return 'Images/INTJ.png';
         case 'INTP':
-            return 'cat.jpg';
+            return 'Images/INTP.png';
         case 'ENTJ':
-            return 'cat.jpg';
+            return 'Images/ENTJ.png';
         case 'ENTP':
-            return 'cat.jpg';
+            return 'Images/ENTP.png';
         case 'INFJ':
-            return 'cat.jpg';
+            return 'Images/INFJ.png';
         case 'INFP':
-            return 'cat.jpg';
+            return 'Images/INFP.png';
         case 'ENFJ':
-            return 'cat.jpg';
+            return 'Images/ENFJ.png';
         case 'ENFP':
-            return 'cat.jpg';
+            return 'Images/ENFP.png';
         case 'ISTJ':
-            return 'cat.jpg';
+            return 'Images/ISTJ.png';
         case 'ISFJ':
-            return 'cat.jpg';
+            return 'Images/ISFJ.png';
         case 'ESTJ':
-            return 'cat.jpg';
+            return 'Images/ESTJ.png';
         case 'ESFJ':
-            return 'cat.jpg';
+            return 'Images/ESFJ.png';
         case 'ISTP':
-            return 'cat.jpg';
+            return 'Images/ISTP.png';
         case 'ISFP':
-            return 'cat.jpg';
+            return 'Images/ISFP.png';
         case 'ESTP':
-            return 'cat.jpg';
+            return 'Images/ESTP.png';
         case 'ESFP':
-            return 'cat.jpg';
+            return 'Images/ESFP.png';
     }
 }
 
@@ -372,74 +372,74 @@ function getMbtiDescription(mbtiType) {
 function getGoodCompatibilityImagePath(mbtiType) {
     switch (mbtiType) {
         case 'INTJ':
-            return 'cat.jpg';
+            return 'Images/ESFP.png';
         case 'INTP':
-            return 'cat.jpg';
+            return 'Images/ESFJ.png';
         case 'ENTJ':
-            return 'cat.jpg';
+            return 'Images/ISFP.png';
         case 'ENTP':
-            return 'cat.jpg';
+            return 'Images/ISFJ.png';
         case 'INFJ':
-            return 'cat.jpg';
+            return 'Images/ESTP.png';
         case 'INFP':
-            return 'cat.jpg';
+            return 'Images/ESTJ.png';
         case 'ENFJ':
-            return 'cat.jpg';
+            return 'Images/ISTP.png';
         case 'ENFP':
-            return 'cat.jpg';
+            return 'Images/ISTJ.png';
         case 'ISTJ':
-            return 'cat.jpg';
+            return 'Images/ENFP.png';
         case 'ISFJ':
-            return 'cat.jpg';
+            return 'Images/ENTP.png';
         case 'ESTJ':
-            return 'cat.jpg';
+            return 'Images/INFP.png';
         case 'ESFJ':
-            return 'cat.jpg';
+            return 'Images/INTP.png';
         case 'ISTP':
-            return 'cat.jpg';
+            return 'Images/ENFJ.png';
         case 'ISFP':
-            return 'cat.jpg';
+            return 'Images/ENTJ.png';
         case 'ESTP':
-            return 'cat.jpg';
+            return 'Images/INFJ.png';
         case 'ESFP':
-            return 'cat.jpg';
+            return 'Images/INTJ.png';
     }
 }
 
 function getBadCompatibilityImagePath(mbtiType) {
     switch (mbtiType) {
         case 'INTJ':
-            return 'cat.jpg';
+            return 'Images/ESFJ.png';
         case 'INTP':
-            return 'cat.jpg';
+            return 'Images/ESFP.png';
         case 'ENTJ':
-            return 'cat.jpg';
+            return 'Images/ISFJ.png';
         case 'ENTP':
-            return 'cat.jpg';
+            return 'Images/ISFP.png';
         case 'INFJ':
-            return 'cat.jpg';
+            return 'Images/ESTJ.png';
         case 'INFP':
-            return 'cat.jpg';
+            return 'Images/ESTP.png';
         case 'ENFJ':
-            return 'cat.jpg';
+            return 'Images/ISTJ.png';
         case 'ENFP':
-            return 'cat.jpg';
+            return 'Images/ISTP.png';
         case 'ISTJ':
-            return 'cat.jpg';
+            return 'Images/ENFJ.png';
         case 'ISFJ':
-            return 'cat.jpg';
+            return 'Images/ENTJ.png';
         case 'ESTJ':
-            return 'cat.jpg';
+            return 'Images/INFJ.png';
         case 'ESFJ':
-            return 'cat.jpg';
+            return 'Images/INTJ.png';
         case 'ISTP':
-            return 'cat.jpg';
+            return 'Images/ENFP.png';
         case 'ISFP':
-            return 'cat.jpg';
+            return 'Images/ENTP.png';
         case 'ESTP':
-            return 'cat.jpg';
+            return 'Images/INFP.png';
         case 'ESFP':
-            return 'cat.jpg';
+            return 'Images/INTP.png';
     }
 }
 

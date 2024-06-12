@@ -160,6 +160,7 @@ header img {
     width: 250px;
     height: 200px;
     margin-bottom: 2.5rem;
+    object-fit: contain;
 }
 
 #result-screen #mbti-info {
@@ -256,6 +257,8 @@ header img {
     width: 150px;
     height: 100px;
     margin-bottom: 0.75rem;
+
+    object-fit: contain;
 }
 
 .result-logo {
