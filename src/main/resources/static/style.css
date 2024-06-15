@@ -31,6 +31,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+
+    overflow-x: hidden;
 }
 
 body {
@@ -311,11 +313,13 @@ footer .name-box {
     justify-content: space-between;
     align-items: center;
     padding-left: 1.25rem;
+
+    margin-bottom: 8px;
 }
 
 footer .name-box .name {
     display: flex;
-    font-size: 0.5rem;
+    font-size: 0.875rem;
 }
 
 footer .name-box .name a {
@@ -330,9 +334,9 @@ footer .name-box .name a::before {
     content: "";
     position: absolute;
     right: -6px;
-    top: 1px;
+    top: 3px;
     width: 1px;
-    height: 8px;
+    height: 12px;
     background-color: #CCBFB2;
 }
 footer .name-box .name a:last-of-type::before {
@@ -344,7 +348,7 @@ footer .logo {
 }
 
 footer .f-container p {
-    font-size: 0.375rem;
+    font-size: 0.875rem;
     color: #CCBFB2;
 }
 
@@ -412,6 +416,11 @@ footer .link-box a:hover {
     .result-footer .f-container {
         margin: 0 auto;
         padding: 1rem 3rem 0.5rem;
+    }
+
+    footer .name-box,
+    footer .link-box {
+        padding-left: 1rem;
     }
 
 }
