@@ -112,8 +112,9 @@ header img {
 
     cursor: pointer;
 
-    width: 100%;
+    width: 79%;
 }
+
 #start-screen #start-btn:hover,
 #result-screen #restart-btn:hover {
     background-color: #9B7268;
@@ -267,7 +268,7 @@ header img {
     object-fit: contain;
 }
 
-#restart-btn {
+.restart {
     margin-bottom: 5rem;
 }
 
