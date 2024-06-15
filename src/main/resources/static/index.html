@@ -24,7 +24,7 @@
 
     <div id="question-screen" style="display: none;">
         <!-- 진행 화면 내용 -->
-        <img src="image21.png" id="question-img">
+        <img src="questions/1.png" id="question-img">
         <h2 id="question"></h2>
         <div id="choices"></div>
     </div>
@@ -54,7 +54,15 @@
             </div>
         </div>
 
-        <button id="restart-btn">테스트 다시하기</button>
+        <div class="restart">
+            <button id="restart-btn">테스트 다시하기</button>
+
+            <!-- 공유하기 버튼 구현 -->
+            <a id="kakao-link-btn" href="javascript:shareMessage()" style=" float: right; width: 65px;">
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+                     alt="카카오톡 공유 보내기 버튼" />
+            </a>
+        </div>
 
         <footer id="footer" class="result-footer">
             <div class="f-container">
@@ -85,5 +93,13 @@
 
 
 <script src="/script.js"></script>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+
+    // Kakao.init('') => 해당 키는 노션에 올려둘게여
+
+</script>
+
 </body>
 </html>

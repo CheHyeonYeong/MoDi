@@ -21,6 +21,7 @@ let mbtiScore = {
 // 질문과 선택지
 const questions = [
     {
+        imgSrc : "questions/1.png",
         text: "내일은 기다리던 소풍 날! 당신은 어떤 모습인가요?",
         choices: [
             { text: "소풍 가서 뭐 하고 놀지 벌써부터 상상의 나래를 펼치느라 잠이 오지 않는다", type: "P" },
@@ -28,6 +29,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/2.jpg",
         text: "소풍 장소에 도착한 도토리 친구들, 당신은 무엇을 하고 싶나요?",
         choices: [
             { text: "친구들과 함께 숲속 탐험", type: "E" },
@@ -35,6 +37,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/3.jpg",
         text: "소풍 장소에서 발견한 미지의 숲, 당신은 어떻게 할까요?",
         choices: [
             { text: "호기심이 생겨 숲을 탐험해 본다", type: "N" },
@@ -42,6 +45,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/4.jpg",
         text: "도토리 친구 한 명이 슬퍼 보여요. 어떻게 위로해 줄까요?",
         choices: [
             { text: "곁에 있어주며 말없이 손을 잡아준다", type: "F" },
@@ -49,6 +53,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/5.jpg",
         text: "도토리 마을에 새로운 친구가 왔어요. 당신은 어떤 모습인가요?",
         choices: [
             { text: "먼저 다가가 인사한다", type: "E" },
@@ -56,6 +61,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/6.jpg",
         text: "도토리 친구가 중요한 결정을 해야 해요. 당신은 어떻게 도와줄까요?",
         choices: [
             { text: "친구의 감정에 공감하며 조언한다", type: "F" },
@@ -63,6 +69,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/7.jpg",
         text: "도토리 올림픽 날! 어떤 종목에 출전하고 싶나요?",
         choices: [
             { text: "빠른 속도를 자랑할 수 있는 달리기", type: "S" },
@@ -70,13 +77,14 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/8.jpg",
         text: "도토리 마을에 축제가 열렸어요. 당신은 축제를 어떻게 즐기고 싶나요?",
         choices: [
             { text: "친구들과 함께 이곳저곳 돌아다니며 구경", type: "P" },
             { text: "미리 세운 계획에 따라 체계적으로 즐기기", type: "J" }
         ]
     },
-    {
+    {imgSrc : "questions/9.jpg",
         text: "도토리 마을 축제의 전통! 요리 대회 날이에요. 당신은 어떤 방식으로 요리를 준비할까요?",
         choices: [
             { text: "대회 전날까지 다양한 레시피를 실험해보고 즉흥적으로 요리한다", type: "P" },
@@ -84,6 +92,7 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/10.jpg",
         text: "축제에서 재미있어 보이는 댄스 공연이 있어요. 당신의 행동은?",
         choices: [
             { text: "주저 없이 앞에 나가서 신나게 춤을 춘다", type: "E" },
@@ -91,13 +100,14 @@ const questions = [
         ]
     },
     {
+        imgSrc : "questions/11.jpg",
         text: "도토리 마을에 위기가 찾아왔어요. 당신은 어떤 역할을 하고 싶나요?",
         choices: [
             { text: "상황을 분석하고 논리적인 해결책을 제시한다", type: "T" },
             { text: "친구들의 마음을 헤아리며 위로와 공감을 전한다", type: "F" }
         ]
     },
-    {
+    {imgSrc : "questions/12.jpg",
         text: "위기가 해결되고 마을에 평화가 찾아왔어요. 당신이 가장 기뻐하는 이유는?",
         choices: [
             { text: "앞으로 마을에 좋은 일들이 가득할 것 같아서", type: "N" },
@@ -124,8 +134,9 @@ function showQuestion() {
     questionElement.innerText = questions[currentQuestion].text;
     choicesElement.innerHTML = '';
     progressBar.style.display = 'block';
-    qimg.src = 'image21.png';
+
     questions[currentQuestion].choices.forEach(choice => {
+        qimg.src = questions[currentQuestion].imgSrc; // 이 부분을 수정
         const button = document.createElement('button');
         button.innerText = choice.text;
         button.onclick = () => {
@@ -149,13 +160,6 @@ function selectChoice(type) {
         showResult();
     }
 
-    if (0 <= currentQuestion && currentQuestion < 4) {
-        qimg.src = 'image21.png';
-    } else if (4 <= currentQuestion && currentQuestion < 8) {
-        qimg.src = 'image28.png';
-    } else if (8 <= currentQuestion && currentQuestion < 13) {
-        qimg.src = 'image25.png';
-    }
 }
 
 function showResult() {
@@ -188,6 +192,7 @@ function showResult() {
             const mbtiResult = data.result;
             const percentage = data.percentage;
             displayMbtiResult(mbtiResult, percentage);
+            setKakaoLink(mbtiResult);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -531,6 +536,43 @@ function getBadCompatibility(mbtiType) {
     }
 }
 
+function getSendMbtiImagePath(mbtiType) {
+    switch (mbtiType) {
+        case 'INTJ':
+            return 'https://pbs.twimg.com/media/GQGhGpna0AAJvji?format=png&name=360x360';
+        case 'INTP':
+            return 'https://pbs.twimg.com/media/GQGhGpna0AAJvji?format=png&name=360x360';
+        case 'ENTJ':
+            return 'https://pbs.twimg.com/media/GQGg_6sbEAAK-Jh?format=png&name=360x360';
+        case 'ENTP':
+            return 'https://pbs.twimg.com/media/GQGg_6qaoAAREtX?format=png&name=360x360';
+        case 'INFJ':
+            return 'https://pbs.twimg.com/media/GQGhESwakAAouYE?format=png&name=360x360';
+        case 'INFP':
+            return 'https://pbs.twimg.com/media/GQGhGpna0AAJvji?format=png&name=360x360';
+        case 'ENFJ':
+            return 'https://pbs.twimg.com/media/GQGg_6qa8AARXjJ?format=png&name=360x360';
+        case 'ENFP':
+            return 'https://pbs.twimg.com/media/GQGg_7GboAA3kic?format=png&name=360x360';
+        case 'ISTJ':
+            return 'https://pbs.twimg.com/media/GQGhI4jakAAHWYj?format=png&name=360x360';
+        case 'ISFJ':
+            return 'https://pbs.twimg.com/media/GQGhGpna0AAJvji?format=png&name=360x360';
+        case 'ESTJ':
+            return 'https://pbs.twimg.com/media/GQGhESwaMAAbpFF?format=png&name=360x360';
+        case 'ESFJ':
+            return 'https://pbs.twimg.com/media/GQGhESva8AA_tdz?format=png&name=360x360';
+        case 'ISTP':
+            return 'https://pbs.twimg.com/media/GQGhI4ibsAALDQi?format=png&name=360x360';
+        case 'ISFP':
+            return 'https://pbs.twimg.com/media/GQGhI4ia0AA6Bsz?format=png&name=360x360';
+        case 'ESTP':
+            return 'https://pbs.twimg.com/media/GQGhESwakAAouYE?format=png&name=360x360';
+        case 'ESFP':
+            return 'https://pbs.twimg.com/media/GQGhESvaMAAs3ac?format=png&name=360x360';
+    }
+}
+
 function restartTest() {
     currentQuestion = 0;
     mbtiScore = {
@@ -550,3 +592,34 @@ function updateProgressBar() {
 
 document.getElementById('start-btn').addEventListener('click', startTest);
 document.getElementById('restart-btn').addEventListener('click', restartTest);
+
+function setKakaoLink(mbtiType) {
+    const title = getMbtiTitle(mbtiType);
+    const description = getMbtiDescription(mbtiType);
+    const imageUrl = getSendMbtiImagePath(mbtiType);
+
+    const content = {
+        title: title,
+        description: description,
+        imageUrl: imageUrl,
+        link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            androidExecParams: 'test',
+        },
+    };
+
+    console.log(content.imageUrl);
+    Kakao.Link.createDefaultButton({
+        container: '#kakao-link-btn',
+        objectType: 'feed',
+        content: content,
+        buttons: [
+            {
+                title: '나의 도토리는 모디?🌰',
+                link: {
+                    mobileWebUrl: 'https://developers.kakao.com',
+                },
+            },
+        ],
+    });
+}
