@@ -9,6 +9,7 @@ const resultElement = document.getElementById('mbti-result');
 const descriptionElement = document.getElementById('mbti-description');
 const progressBar = document.getElementById('progress-bar');
 
+
 // 현재 질문 인덱스
 let currentQuestion = 0;
 
@@ -119,9 +120,11 @@ function startTest() {
 }
 
 function showQuestion() {
+    const qimg = document.getElementById('question-img');
     questionElement.innerText = questions[currentQuestion].text;
     choicesElement.innerHTML = '';
     progressBar.style.display = 'block';
+    qimg.src = 'image21.png';
     questions[currentQuestion].choices.forEach(choice => {
         const button = document.createElement('button');
         button.innerText = choice.text;
@@ -135,6 +138,7 @@ function showQuestion() {
 
 
 function selectChoice(type) {
+    const qimg = document.getElementById('question-img');
     mbtiScore[type]++;
     currentQuestion++;
     if (currentQuestion < questions.length) {
@@ -144,12 +148,21 @@ function selectChoice(type) {
         progressBar.style.display = 'none';
         showResult();
     }
+
+    if (0 <= currentQuestion && currentQuestion < 4) {
+        qimg.src = 'image21.png';
+    } else if (4 <= currentQuestion && currentQuestion < 8) {
+        qimg.src = 'image28.png';
+    } else if (8 <= currentQuestion && currentQuestion < 13) {
+        qimg.src = 'image25.png';
+    }
 }
 
 function showResult() {
     questionScreen.style.display = 'none';
     progressBar.style.display = 'none';
     resultScreen.style.display = 'block';
+    // footer.style.display = 'block';
 
     // MBTI 결과 계산을 위해 백엔드로 데이터 전송
     let mbtiData = JSON.stringify({
@@ -511,6 +524,7 @@ function getBadCompatibility(mbtiType) {
         case 'ISFP':
             return 'ENTP';
         case 'ESTP':
+        case 'ESTP':
             return 'INFP';
         case 'ESFP':
             return 'INTP';
@@ -526,6 +540,7 @@ function restartTest() {
     startScreen.style.display = 'block';
     progressBar.style.width = '0';
     progressBar.style.display = 'none';
+    // footer.style.display = 'none';
 }
 
 function updateProgressBar() {

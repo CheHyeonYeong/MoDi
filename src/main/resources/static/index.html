@@ -11,6 +11,7 @@
     <img src="Group%201.png">
     <div id="progress-bar"></div>
 </header>
+
 <div class="container">
     <div id="start-screen">
         <!-- 시작 화면 내용 -->
@@ -23,7 +24,7 @@
 
     <div id="question-screen" style="display: none;">
         <!-- 진행 화면 내용 -->
-        <img src="image21.png">
+        <img src="image21.png" id="question-img">
         <h2 id="question"></h2>
         <div id="choices"></div>
     </div>
@@ -55,9 +56,33 @@
 
         <button id="restart-btn">테스트 다시하기</button>
 
-        <img src="logo.png" class="result-logo">
+        <footer id="footer" class="result-footer">
+            <div class="f-container">
+                <div class="link-box">
+                    <a href="https://github.com/CheHyeonYeong/MoDi.git">Github</a>
+                    <a href="https://www.figma.com/design/DrN5dwr4Zb3vhFiZlSRz5q/MoDi?node-id=8-2&t=F2xjeUUF1WRau6Hg-1">Figma</a>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="name-box">
+                    <div class="name">
+                        <a href="https://github.com/SiNiKin">김신이</a>
+                        <a href="https://github.com/Rencal3491">조민준</a>
+                        <a href="https://github.com/CheHyeonYeong">채현영</a>
+                    </div>
+
+                    <div class="logo">
+                        <img src="f-logo.png" class="result-logo">
+                    </div>
+                </div>
+
+                <p>&copy;Copyright &copy; 2024 Mo-di</p>
+            </div>
+        </footer>
     </div>
 </div>
+
 
 <script src="/script.js"></script>
 </body>
