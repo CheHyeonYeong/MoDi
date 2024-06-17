@@ -166,7 +166,6 @@ function showResult() {
     questionScreen.style.display = 'none';
     progressBar.style.display = 'none';
     resultScreen.style.display = 'block';
-    // footer.style.display = 'block';
 
     // MBTI 결과 계산을 위해 백엔드로 데이터 전송
     let mbtiData = JSON.stringify({
@@ -582,7 +581,6 @@ function restartTest() {
     startScreen.style.display = 'block';
     progressBar.style.width = '0';
     progressBar.style.display = 'none';
-    // footer.style.display = 'none';
 }
 
 function updateProgressBar() {

@@ -32,7 +32,7 @@ html, body {
     margin: 0;
     padding: 0;
 
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
 body {
@@ -269,7 +269,19 @@ header img {
 }
 
 .restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5rem;
+}
+
+#restart-btn {
+    margin-right: 0.5rem;
+}
+
+#kakao-link-btn {
+    width: 65px;
+    margin-top: 0.5rem;
 }
 
 .result-footer {
@@ -360,6 +372,10 @@ footer .link-box a:hover {
 
 
 @media screen and (max-width: 500px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
     body {
         background-color: #F5F0EA;
     }
@@ -368,10 +384,13 @@ footer .link-box a:hover {
         padding: 0 2rem;
     }
 
-    #start-screen #start-btn,
-    #result-screen #restart-btn {
-        padding: 20px 80px;
+    #start-screen #start-btn {
+        padding: 1.25rem 5rem;
         font-size: 0.875rem;
+    }
+
+    #result-screen #restart-btn {
+        padding: 1.25rem 1rem;
     }
 
     #question-screen #choices button {
@@ -404,7 +423,7 @@ footer .link-box a:hover {
         font-size: 0.875rem;
     }
 
-    #restart-btn {
+    .restart {
         margin-bottom: 3rem;
     }
 
